@@ -7,12 +7,11 @@ from .forms import SignUpForm
 
 class SignUpAdmin(admin.ModelAdmin):
 	""" customizes the look of admin for SignUp """
-    list_display = ('email', 'timestamp', 'updated')
-    
-    # the Meta, in this case, allows for the list_display
-    class Meta:
-    	model = SignUp
+	list_display = ('email', 'timestamp', 'updated')
 
-    form = SignUpForm
+	# the Meta, in this case, allows for the list_display
+	class Meta:
+		model = SignUp
 
+	form = SignUpForm
 admin.site.register(SignUp, SignUpAdmin)

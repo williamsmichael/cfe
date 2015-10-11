@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <head>
-	<title>hej | mple by michael williams</title>
+	<title>{{ title }} | mple by michael williams</title>
 	<meta charset="UTF-8">
+	<style type="text/css">
+		.errorlist li {
+			color: #CC6666;
+			list-style: none;
+		}
+	</style>
 </head>
 <body>
-	<h1>Hej hej!</h1>
+	<h1>Hej hej! <span>{{ user }}</span></h1>
+	<p>{{ question }}</p>
+	<p>{{ status }}</p>
+
+	{# form data #}
+	<form method='POST' action='.'>{% csrf_token %}
+		
+		{{ form.as_p }}
+
+		{# submit button #}
+		<input type="submit" value="submittal">
+	</form>
+
 </body>
 </html>
